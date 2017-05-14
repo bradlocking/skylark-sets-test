@@ -1,0 +1,19 @@
+<!-- views -->
+{{ $routeParams }}
+
+<section class="heading">
+    <div class="container-fluid container-fluid--small">
+        <h1>Set: {{ set.title }}</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo dolor aliquid reiciendis saepe, velit quos fugiat eveniet mollitia ullam voluptate.</p>
+    </div>
+</section>
+
+<section class="episodes" ng-controller="episodesController">
+    <div class="container-fluid container-fluid--small">
+
+        <a ng-href="/episode/{{ Episode.uid }}" class="episodes__episode" ng-repeat="Episode in episodes">
+            {{ Episode.title }}
+        </a>
+
+    </div>
+</section>
