@@ -1,0 +1,56 @@
+.list {
+
+	.flex-list {
+		@include flexbox;
+		@include flex-wrap(wrap);
+		margin: 0 0 -30px 0;
+		width: calc(100% + 30px);
+	}
+ 
+	&__item {
+		padding: 50px 45px;
+		background: #f1f1f1;
+		display: block;
+		border-radius: 20px;
+		width: calc(50% - 30px); 
+		margin:0 30px 30px 0;
+
+		@include breakpoint('xs') {
+			width: calc(100% - 30px);
+		}
+
+		> strong {
+			margin-top: 9px;
+			display: block;
+			color: #888888;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: 600;
+		}
+
+		&a {
+			&:hover {
+				background: darken(#f1f1f1, 3%);
+			}
+		}
+
+		&--full {
+			width: 100%;
+		}
+	}
+
+	&__featured-image {
+		> figure {
+			position: relative;
+			height: 140px;
+			width: 100%;
+			background-size: cover;
+			border-radius: 10px;
+		}
+
+		+ h2 {
+			margin-top: 25px;
+		}
+	}
+}

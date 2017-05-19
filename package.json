@@ -1,0 +1,69 @@
+{
+  "name": "skylark-sets-test",
+  "version": "1.0.0",
+  "description": "A simple angularJS site powered by data taken from the Skylark API. ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradlocking/skylark-sets-test.git"
+  },
+  "keywords": [
+    "Skylark",
+    "AngularJS"
+  ],
+  "author": "Brad Locking <hello@bradlocking.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradlocking/skylark-sets-test/issues"
+  },
+  "homepage": "https://github.com/bradlocking/skylark-sets-test#readme",
+  "dependencies": {
+    "angular-resource": "^1.6.4",
+    "body-parser": "^1.17.2",
+    "bower": "^1.8.0",
+    "connect-livereload": "^0.6.0",
+    "cors": "^2.8.3",
+    "express": "^4.15.2",
+    "express-http-proxy": "^1.0.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-connect": "^5.0.0",
+    "gulp-connect-proxy": "^0.3.1",
+    "gulp-embedlr": "^0.5.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-webserver": "^0.9.1",
+    "http-proxy": "^1.16.2",
+    "jshint": "^2.9.4",
+    "run-sequence": "^1.2.2",
+    "tiny-lr": "^1.0.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "rules": {
+      "quotes": [
+        2,
+        "single"
+      ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  }
+}

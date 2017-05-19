@@ -1,0 +1,40 @@
+<!-- views -->
+<section class="heading">
+    <div class="container-fluid container-fluid--small">
+        <h2>Set</h2>
+        <h1>{{ singleSet.title }}</h1>
+        <div class="availability"><span>Ends: </span>{{ singleSet.ends_on | date:'EEEE, dd MM, yyyy' }} ({{ availability }})</div>
+        <p ng-if="singleSet.body">{{ singleSet.body }}</p>
+    </div>
+</section>
+
+{{ params.setId }}
+
+<section class="episodes">
+    <div class="container-fluid container-fluid--small">
+
+        <div class="flex-list">
+            <a ng-href="/episode/{{ Episode.uid }}" class="episodes__episode" ng-repeat="Episode in set.items">
+                {{ Episode.title }}
+                {{ Episode.synopsis }
+            </a>    
+        </div>
+
+    </div>
+</section>
+
+<section class="list" ng-controller="episodesController">
+    <div class="container-fluid container-fluid--small">
+
+        <div class="flex-list">
+            <a ng-href="/episode/{{ Episode.uid }}" class="list__item" ng-repeat="Episode in episodes">
+                <h4>{{ Episode.title }}</h4>
+            </a>
+
+            <div class="list__item list__item--full" ng-if="!episodesAvailable">
+                <h4>There are no films avilable</h4>
+            </div>
+        </div>
+
+    </div>
+</section>
