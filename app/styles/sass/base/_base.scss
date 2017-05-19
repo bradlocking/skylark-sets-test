@@ -66,6 +66,7 @@ body {
 
 a {
     text-decoration: none;
+    @include anim(background .2s ease, color .2s ease);
 }
 
 * {

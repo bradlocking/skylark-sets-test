@@ -12,9 +12,12 @@
 		background: #f1f1f1;
 		display: block;
 		border-radius: 20px;
-		width: calc(50% - 30px);
+		width: calc(50% - 30px); 
 		margin:0 30px 30px 0;
-		@include anim(all .2s ease);
+
+		@include breakpoint('xs') {
+			width: calc(100% - 30px);
+		}
 
 		> strong {
 			margin-top: 9px;
