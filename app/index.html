@@ -10,7 +10,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat:300,600,700" rel="stylesheet">
 
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+        <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/> -->
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css"/>
         <link rel="stylesheet" href="bower_components/animate.css/animate.css"/>
         <link rel="stylesheet" href="styles/css/main.css"/>
@@ -18,11 +18,13 @@
     <body>
 
         <div id="wrap">
-
-            <a href="/episode">Episode</a>
-            <a href="/">home</a>
-
             <div ng-view></div>
+        </div>
+
+        <div className="loader" disabled>
+          <svg className="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+            <circle className="path" cx="26px" cy="26px" r="20px" fill="none" strokeWidth="2px"></circle>
+          </svg>
         </div>
 
         <!-- scripts -->
@@ -32,6 +34,7 @@
         <script src="bower_components/angular-resource/angular-resource.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
 
 
         <!-- modules -->
@@ -43,6 +46,7 @@
         <!-- controllers -->
         <script src="scripts/controllers/homeController.js"></script>
         <script src="scripts/controllers/episodeController.js"></script>
+        <script src="scripts/controllers/singleSetController.js"></script>
         <script src="scripts/controllers/singleEpisodeController.js"></script>
 
 

@@ -7,16 +7,10 @@ app.controller('singleEpisodeController', ['$scope', '$location', 'getSkylark', 
 
     $scope.message = 'this is the message';
 
-    console.log($routeParams);
-
-    function getEpisode(episodeApiUrl) {
+    function getEpisode(episodeApiUrl) { 
         getSkylark.episodeContent(episodeApiUrl)
             .then(function (response) {
                 $scope.episode = response.data;
-
-                console.log($scope.episode);
-
-                // console.log($scope.set)
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });

@@ -32,6 +32,14 @@
     box-sizing: border-box;
 }
 
+a {
+    color: $primaryColor;
+    @include anim(all .25s ease);
+    cursor: pointer;
+    text-decoration: none;
+    outline: 0 !important;
+}
+
 body {
     position: relative;
     height: 100%;

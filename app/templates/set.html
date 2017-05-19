@@ -1,0 +1,21 @@
+<!-- views -->
+<section class="heading">
+    <div class="container-fluid container-fluid--small">
+        <h2>Set</h2>
+        <h1>{{ singleSet.title }}</h1>
+        <div class="availability"><span>Ends </span>{{ availability }}</div>
+        <p ng-if="singleSet.body">{{ singleSet.body }}</p>
+    </div>
+</section>
+
+<section class="episodes">
+    <div class="container-fluid container-fluid--small">
+
+        <div class="flex-list">
+            <a ng-href="/episode/{{ Episode.uid }}" class="episodes__episode" ng-repeat="Episode in set.items">
+                {{ Episode.title }}
+            </a>    
+        </div>
+
+    </div>
+</section>

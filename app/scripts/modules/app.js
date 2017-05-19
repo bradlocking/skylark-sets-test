@@ -10,6 +10,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 	        templateUrl : 'templates/home.html',
 	        controller  : 'homeController'
 	    })
+
+	    // route for the single set page
+	    .when('/set/:setId', {
+	        templateUrl : 'templates/set.html',
+	        controller  : 'singleSetController'
+	    })
     
     	.when('/episode/:episodeId', {
 			templateUrl: 'templates/episode.html',
@@ -21,3 +27,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 		});
 
 }]);
+
+
+// Run this whenever routing to another page.
+app.run(function($rootScope, $location) {
+	$rootScope.$on( "$locationChangeStart", function(event, next, current) {
+		$rootScope.loading = true;
+		console.log($rootScope);
+	});
+});

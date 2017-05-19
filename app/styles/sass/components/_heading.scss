@@ -1,3 +1,19 @@
 .heading {
 	margin-bottom: 60px;
+
+	h2 {
+		font-size: 17px;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		color: $primaryColor;
+
+		+ h1 {
+			margin-top: 10px;
+		}
+	}
+
+	.availability {
+		margin-top: 12px;
+		color: #8a8a8a;
+	}
 } 

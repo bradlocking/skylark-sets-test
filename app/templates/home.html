@@ -1,14 +1,35 @@
 <!-- views -->
-{{ $routeParams }}
-
 <section class="heading">
     <div class="container-fluid container-fluid--small">
-        <h1>Set: {{ set.title }}</h1>
+        <h1>Sets</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo dolor aliquid reiciendis saepe, velit quos fugiat eveniet mollitia ullam voluptate.</p>
     </div>
 </section>
 
-<section class="episodes" ng-controller="episodesController">
+
+<section class="list" ng-controller="episodesController">
+    <div class="container-fluid container-fluid--small">
+
+        <div class="flex-list">
+            <a ng-href="/set/{{ Set.uid }}" class="list__item" ng-repeat="Set in allSets">
+                <div class="list__featured-image" ng-repeat="Image in featuredImages" ng-if="Image.setID==Set.uid">
+                {{ Set.uid }} {{ Image.setID }}
+                    <figure backg></figure>
+                    yep yep 
+                </div>
+                
+                <h2>{{ Set.title }}</h2>
+                <p ng-if="Set.summary">{{ Set.summary }}</p>
+                <!-- <div>{{ availability }}</div> -->
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+<br/><br/><br/><br/><br/><br/><br/>
+<!-- <section class="episodes" ng-controller="episodesController">
     <div class="container-fluid container-fluid--small">
 
         <a ng-href="/episode/{{ Episode.uid }}" class="episodes__episode" ng-repeat="Episode in episodes">
@@ -16,4 +37,4 @@
         </a>
 
     </div>
-</section>
+</section> -->
