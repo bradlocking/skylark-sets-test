@@ -21,7 +21,6 @@ app.service('getSkylark', ['$http', function ($http) {
         return $http.get(uid);
     };
 
-
     // Get an image from the API.
     this.getImage = function (uid) {
         return $http.get(uid);

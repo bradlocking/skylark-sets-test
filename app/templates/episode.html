@@ -1,3 +1,9 @@
-<h2>Episodes</h2>
-
-{{ message }}
+<!-- views -->
+<section class="heading">
+    <div class="container-fluid container-fluid--small">
+        <h2>Episode</h2>
+        <h1>{{ episode.title }}</h1>
+        <div class="availability"><span>Ends: </span>{{ episode.ends_on | date:'EEEE, dd MM, yyyy' }}</div>
+        <div class="button">Play Video</div>
+    </div>
+</section>

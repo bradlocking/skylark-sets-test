@@ -1,20 +1,22 @@
-app.controller('singleEpisodeController', ['$scope', '$location', 'getSkylark', '$routeParams', function($scope, getSkylark, $http, $routeParams) {
+app.controller('singleEpisodeController', ['$scope', '$rootScope', '$location', 'getSkylark', '$http', '$routeParams', function($scope, $rootScope, $location, getSkylark, $http, $routeParams) {
 
     $scope.episode;
-    $scope.params = $routeParams
+    $scope.params = $routeParams;
 
-    var episodeApiUrl = '/api/episodes/'+ $scope.params.episodeId +'/items/'; 
+    var episodeId = $scope.params.episodeId;
 
-    $scope.message = 'this is the message';
-
-    function getEpisode(episodeApiUrl) { 
-        getSkylark.episodeContent(episodeApiUrl)
+    function getEpisode(episodeId) { 
+        $http.get('/api/episodes/' + episodeId + '/')
             .then(function (response) {
                 $scope.episode = response.data;
+
+                // Set rootscope loading to false, hiding loader.
+                $rootScope.loading = false;
+
             }, function (error) {
-                $scope.status = 'Unable to load customer data: ' + error.message;
+                $scope.status = 'Unable to load data: ' + error.message;
             });
     }
-    getEpisode(episodeApiUrl);
+    getEpisode(episodeId);
 
 }]);

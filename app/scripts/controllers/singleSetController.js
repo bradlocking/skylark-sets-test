@@ -1,5 +1,5 @@
-app.controller('singleSetController', ['$scope', 'getSkylark', '$route', '$routeParams', '$location', 
-    function($scope, getSkylark, $http, $route, $routeParams, $location) {
+app.controller('singleSetController', ['$scope', '$rootScope', 'getSkylark', '$route', '$routeParams', '$location', 
+    function($scope, $rootScope, getSkylark, $http, $route, $routeParams, $location) {
         
     $scope.singleSet;
     $scope.$route = $route;
@@ -8,7 +8,7 @@ app.controller('singleSetController', ['$scope', 'getSkylark', '$route', '$route
 
     var theSetId = $scope.$route.setId;
 
-    console.log($scope);
+    // console.log($scope);
 
     function singleSet(theSetId) {
         getSkylark.getSingleSet(theSetId)
@@ -16,9 +16,10 @@ app.controller('singleSetController', ['$scope', 'getSkylark', '$route', '$route
                 $scope.singleSet = response.data;
 
                 // Use moment to format the remaining availability of the set.
-                $scope.availability = moment($scope.singleSet.ends_on).fromNow()
+                $scope.availability = moment($scope.singleSet.ends_on).fromNow(true);
 
-                console.log($scope.singleSet)
+                // Set rootscope loading to false, hiding loader.
+                $rootScope.loading = false;
             }, function (error) {
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });

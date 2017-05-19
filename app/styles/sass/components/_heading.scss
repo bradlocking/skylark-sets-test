@@ -15,5 +15,10 @@
 	.availability {
 		margin-top: 12px;
 		color: #8a8a8a;
+
+		> span {
+			color: #5b5b96;
+			font-weight: 600;
+		}
 	}
 } 

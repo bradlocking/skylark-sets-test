@@ -21,9 +21,9 @@
             <div ng-view></div>
         </div>
 
-        <div className="loader" disabled>
-          <svg className="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
-            <circle className="path" cx="26px" cy="26px" r="20px" fill="none" strokeWidth="2px"></circle>
+        <div class="loader" disabled ng-if="loading">
+          <svg class="spinner-container" width="65px" height="65px" viewBox="0 0 52 52">
+            <circle class="path" cx="26px" cy="26px" r="20px" fill="none" strokeWidth="2px"></circle>
           </svg>
         </div>
 
@@ -48,12 +48,5 @@
         <script src="scripts/controllers/episodeController.js"></script>
         <script src="scripts/controllers/singleSetController.js"></script>
         <script src="scripts/controllers/singleEpisodeController.js"></script>
-
-
-
-        <!-- init javascript data -->
-        <script>
-          const HOME_SET_ID = 'coll_e8400ca3aebb4f70baf74a81aefd5a78';
-        </script>
     </body>
 </html> 

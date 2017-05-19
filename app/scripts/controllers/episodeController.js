@@ -1,13 +1,16 @@
-app.controller('episodesController', ['$scope', 'getSkylark', function($scope, getSkylark, $routeParams) {
+app.controller('episodesController', ['$scope', 'getSkylark', '$route', '$routeParams', function($scope, getSkylark, $routeParams, $route) {
+    // Get the correct set of episodes to load
+    $scope.params = $route;
+    $scope.episodesAvailable = true;
 
-    // We only want the Home set, so it has been defined as a constant on the homepage.
-    var setContent = HOME_SET_ID;
+    // store setId for later use
+    var setId = $scope.params.setId;
 
     // Empty Episodes Array
     $scope.episodes = [];
 
-    function getepisodes(setContent) {
-        getSkylark.setContent(setContent)
+    function getepisodes(setId) {
+        getSkylark.setContent(setId)
             .then(function (response) {
                 
             var episodeData = response.data.objects;
@@ -15,27 +18,31 @@ app.controller('episodesController', ['$scope', 'getSkylark', function($scope, g
             for (var key in episodeData) {
                 var contentUrl = episodeData[key].content_url;
 
-                if (episodeData[key].content_type === 'episode') {  
-                    
-                    getSkylark.episodeContent(contentUrl)
-                        .then(function(response) {
+                console.log(contentUrl);
 
-                            $scope.episodes.push(response.data);
+                if (contentUrl.length != 0) {
+                    if (episodeData[key].content_type === 'episode') {  
+                        
+                        getSkylark.episodeContent(contentUrl)
+                            .then(function(response) {
 
-                        }, function (error) {
-                            $scope.status = 'Unable to load customer data: ' + error.message;
-                        });
+                                $scope.episodes.push(response.data);
 
-                } 
+                            }, function (error) {
+                                $scope.status = 'Unable to load data: ' + error.message;
+                            });
+
+                    } 
+                } else {
+                    $scope.episodesAvailable = false;
+                }
             }
-                
-
 
             }, function (error) {
-                $scope.status = 'Unable to load customer data: ' + error.message;
+                $scope.status = 'Unable to load data: ' + error.message;
             });
     };
-    getepisodes(setContent);
+    getepisodes(setId);
 
 
 }]);

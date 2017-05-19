@@ -31,8 +31,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 
 // Run this whenever routing to another page.
 app.run(function($rootScope, $location) {
-	$rootScope.$on( "$locationChangeStart", function(event, next, current) {
+	$rootScope.$on( '$locationChangeStart', function(event, next, current) {
 		$rootScope.loading = true;
-		console.log($rootScope);
 	});
 });

@@ -12,29 +12,15 @@
 
         <div class="flex-list">
             <a ng-href="/set/{{ Set.uid }}" class="list__item" ng-repeat="Set in allSets">
-                <div class="list__featured-image" ng-repeat="Image in featuredImages" ng-if="Image.setID==Set.uid">
-                {{ Set.uid }} {{ Image.setID }}
-                    <figure backg></figure>
-                    yep yep 
+                <div class="list__featured-image">
+                    <figure style="background-image: url('{{ featuredImages[Set.uid].imageURL }}')" ng-if="featuredImages[Set.uid]"></figure>
+                    <figure style="background-image: url('/assets/images/dummy-film.jpg')" alt="" ng-if="!featuredImages[Set.uid]"></figure>
                 </div>
                 
                 <h2>{{ Set.title }}</h2>
-                <p ng-if="Set.summary">{{ Set.summary }}</p>
-                <!-- <div>{{ availability }}</div> -->
+                <strong>{{ Set.film_count }} Films</strong>
             </a>
         </div>
 
     </div>
 </section>
-
-
-<br/><br/><br/><br/><br/><br/><br/>
-<!-- <section class="episodes" ng-controller="episodesController">
-    <div class="container-fluid container-fluid--small">
-
-        <a ng-href="/episode/{{ Episode.uid }}" class="episodes__episode" ng-repeat="Episode in episodes">
-            {{ Episode.title }}
-        </a>
-
-    </div>
-</section> -->

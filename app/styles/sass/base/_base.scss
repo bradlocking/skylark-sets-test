@@ -96,7 +96,7 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    line-height: 1.2;
+    line-height: 1.5;
     font-weight: 700;
 }
 h1 {
@@ -116,7 +116,7 @@ h2 {
     }
 }
 h3 {
-    font-size: 40px;
+    font-size: 24px;
     
     @include breakpoint('xs') {
         font-size: 35px;

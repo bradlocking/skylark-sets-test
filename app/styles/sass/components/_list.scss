@@ -16,8 +16,38 @@
 		margin:0 30px 30px 0;
 		@include anim(all .2s ease);
 
-		&:hover {
-			background: darken(#f1f1f1, 3%);
+		> strong {
+			margin-top: 9px;
+			display: block;
+			color: #888888;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			font-weight: 600;
+		}
+
+		&a {
+			&:hover {
+				background: darken(#f1f1f1, 3%);
+			}
+		}
+
+		&--full {
+			width: 100%;
+		}
+	}
+
+	&__featured-image {
+		> figure {
+			position: relative;
+			height: 140px;
+			width: 100%;
+			background-size: cover;
+			border-radius: 10px;
+		}
+
+		+ h2 {
+			margin-top: 25px;
 		}
 	}
 }
